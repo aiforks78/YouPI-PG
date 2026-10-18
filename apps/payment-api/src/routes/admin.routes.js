@@ -4,6 +4,9 @@ import { PaymentStatus, PaymentMethod, SellingMode, AuditActorType, isValidVpa, 
 import { PaymentVerificationPipeline } from '@youpi/core';
 import { globalTunnelManager } from '../services/tunnel-manager.js';
 import { formatQrDataUrl } from '../services/whatsapp-berry.service.js';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 function resolveSellingModeAndMethods(body, currentBranding = {}) {
   const inputBranding = body.branding || {};
